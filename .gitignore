@@ -1,0 +1,7 @@
+*.pyc
+*.pth
+*.pkl
+*.gz
+/database_pipeline/
+/Co-DETR/
+/data/
