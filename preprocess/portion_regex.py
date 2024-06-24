@@ -100,30 +100,5 @@ class PortionRegex:
 
 if __name__ == '__main__':
     # JSON 파일에서 데이터 읽기
-    input_file_path = "goods_portion.json"
-    output_file_path = "goods_portion_revised.json"
-    wrong_file_path = 'wrong.json'
-
-    with open(input_file_path, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-
-    result = []
-    wrong = []
-    for item in data:
-        if 'PORTION' in item:
-            processed_text = PortionRegex.extract_and_process_text(item['PORTION'])
-            if processed_text ==None:
-                processed_text = '1'
-            item['REV_PORTION'] = processed_text
-            if not PortionRegex.is_correct_portion(processed_text):
-               wrong.append(item)     
-            result.append(item)
-    
-    with open(output_file_path, 'w', encoding='utf-8') as file:
-        json.dump(result, file, ensure_ascii=False, indent=4)
-
-    with open(wrong_file_path, 'w', encoding='utf-8') as file:
-        json.dump(wrong, file, ensure_ascii=False, indent=4)
-            # if any(f" {term} " in f" {processed_text} " for term in PortionRegex.fabric_terms.keys()):
-            #     # Remove unnecessary parts
-            #     print(f"ID: {item['ID']}, Processed PORTION: {processed_text}")
+    text = "cotton 50 wool10 린넨20 s10 폴리10"
+    print(f'original text : {text}\nregexed text : {PortionRegex.extract_and_process_text(text)}')
