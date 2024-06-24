@@ -1,7 +1,7 @@
 from mmdet.apis import init_detector, inference_detector
 from mmdet.core import DatasetEnum
 from PIL import Image
-import mmcv, pickle, os
+import pickle, os
 
 CONFIG_PATH = 'preprocess/detect_model/custom_detection.py'
 WEIGHT_PATH = 'preprocess/detect_model/custom_detection.pth'
