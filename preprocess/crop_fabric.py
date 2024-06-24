@@ -3,8 +3,8 @@ from mmdet.core import DatasetEnum
 from PIL import Image
 import mmcv, pickle, os
 
-CONFIG_PATH = 'detect_model/custom_detection.py'
-WEIGHT_PATH = 'detect_model/custom_detection.pth'
+CONFIG_PATH = 'preprocess/detect_model/custom_detection.py'
+WEIGHT_PATH = 'preprocess/detect_model/custom_detection.pth'
 
 class FabricCropper:
     def __init__(self):
